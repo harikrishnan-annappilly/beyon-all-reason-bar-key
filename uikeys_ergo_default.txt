@@ -481,3 +481,7 @@ bind		Ctrl+Shift+u  select  PrevSelection+_Not_Idle+_ClearSelection_SelectAll+  
 
 bind		      Ctrl+y  select  PrevSelection+_Waiting+_ClearSelection_SelectAll+                   // select units in wait
 bind		Ctrl+Shift+y  select  PrevSelection+_Not_Waiting+_ClearSelection_SelectAll+               // select units not in wait
+
+bind           Any+\  			HideInterface
+bind		any+ctrl 		movetilt
+bind		any+alt 		moverotate
