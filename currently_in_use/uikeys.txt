@@ -234,7 +234,7 @@ bind              Any+'  togglelos
 bind             Ctrl+'  losradar
 
 bind                tab  select AllMap+_ManualFireUnit_Not_IdMatches_armthor+_ClearSelection_SelectOne+ //commander
-bind           Ctrl+tab  select AllMap+_Builder_Idle+_ClearSelection_SelectOne+ //idle builder
+bind              Alt+e  select Visible+_Builder_Idle_Not_Building_Not_ManualFireUnit_Not_IdMatches_armthor_Buildoptions+_ClearSelection_SelectAll+ //idle builder
 bind                  q  select Visible+_InPrevSel+_ClearSelection_SelectAll+ // select all on-screen units of same type as currently selected
 bind             Ctrl+q  select AllMap+_InPrevSel+_ClearSelection_SelectAll+
 bind             Ctrl+w  select PrevSelection++_ClearSelection_SelectPart_50+ // split units in selection
@@ -242,17 +242,13 @@ bind             Ctrl+e  select AllMap++_ClearSelection_SelectAll+
 
 // bind             Ctrl+q  select AllMap+_IdMatches_armpw+_ClearSelection_SelectOne+ //doesn't work use Not_IdMatches
 // bind           Ctrl+tab  select Visible+_InPrevSel+_ClearSelection_SelectAll+
-//bind             Ctrl+z  select AllMap+_InPrevSel+_ClearSelection_SelectAll+
-//bind             Ctrl+x  select AllMap+_InPrevSel_Not_InHotkeyGroup+_SelectAll+
+// bind             Ctrl+z  select AllMap+_InPrevSel+_ClearSelection_SelectAll+
+// bind             Ctrl+x  select AllMap+_InPrevSel_Not_InHotkeyGroup+_SelectAll+
 
-//bind             Ctrl+w  select AllMap+_Not_Aircraft_Weapons+_ClearSelection_SelectAll+
-//bind             Ctrl+r  select AllMap+_Radar+_ClearSelection_SelectAll+
+// bind             Ctrl+w  select AllMap+_Not_Aircraft_Weapons+_ClearSelection_SelectAll+
+// bind             Ctrl+r  select AllMap+_Radar+_ClearSelection_SelectAll+
 
-//bind             Ctrl+v  select AllMap+_Not_Builder_Not_ManualFireUnit_InPrevSel_Not_InHotkeyGroup+_SelectAll+
-
-// Added by kneto
-
-bind             Ctrl+h  sharedialog // deprecated
+// bind             Ctrl+v  select AllMap+_Not_Builder_Not_ManualFireUnit_InPrevSel_Not_InHotkeyGroup+_SelectAll+
 
 // Ctrl bindings narrow down a selection to only the units which DO match the condition.
 // Alt Bindings narrow down a selection to only the units which DO NOT match the condition.
@@ -260,21 +256,24 @@ bind             Ctrl+h  sharedialog // deprecated
 // Example: Press Ctrl+Alt+e (select all engineers), press Ctrl+i.
 // Effect: Only idle builders will remain in the final selection.
 
-bind		      Ctrl+f  select  PrevSelection+_Not_RelativeHealth_30+_ClearSelection_SelectAll+     // select units have health 10 or less
-bind		Ctrl+Shift+f  select  PrevSelection+_RelativeHealth_30+_ClearSelection_SelectAll+         // select units have health 10 or more
+// Added by kneto
 
-bind		      Ctrl+c  select  PrevSelection+_Not_RelativeHealth_60+_ClearSelection_SelectAll+     // select units have health 30 or less
-bind		Ctrl+Shift+c  select  PrevSelection+_RelativeHealth_60+_ClearSelection_SelectAll+         // select units have health 30 or more
+bind             Ctrl+h  sharedialog // deprecated
 
-bind		      Ctrl+n  select  PrevSelection+_InHotkeyGroup+_ClearSelection_SelectAll+             //
-bind		Ctrl+Shift+n  select  PrevSelection+_Not_InHotkeyGroup+_ClearSelection_SelectAll+         //
+bind			Ctrl+f  select  PrevSelection+_Not_RelativeHealth_30+_ClearSelection_SelectAll+     // select units have health 30 or less
+bind		Ctrl+Shift+f  select  PrevSelection+_RelativeHealth_30+_ClearSelection_SelectAll+         // select units have health 30 or more
 
-bind		      Ctrl+u  select  PrevSelection+_Idle+_ClearSelection_SelectAll+                      // select idle engineers
-bind		Ctrl+Shift+u  select  PrevSelection+_Not_Idle+_ClearSelection_SelectAll+                  // select non idle engineers
+bind			Ctrl+c  select  PrevSelection+_Not_RelativeHealth_60+_ClearSelection_SelectAll+     // select units have health 60 or less
+bind		Ctrl+Shift+c  select  PrevSelection+_RelativeHealth_60+_ClearSelection_SelectAll+         // select units have health 60 or more
 
-bind		      Ctrl+y  select  PrevSelection+_Waiting+_ClearSelection_SelectAll+                   // select units in wait
-bind		Ctrl+Shift+y  select  PrevSelection+_Not_Waiting+_ClearSelection_SelectAll+               // select units not in wait
+bind		      Ctrl+y  select  Visible+_Waiting+_ClearSelection_SelectAll+                   // select units in wait
+bind		Ctrl+Shift+y  select  Visible+_Not_Waiting+_ClearSelection_SelectAll+               // select units not in wait
 
-bind           Any+\  			HideInterface
-bind		any+alt 		movetilt
-bind		any+ctrl 		moverotate
+bind             Alt+w  select Visible+_Resurrect+_ClearSelection_SelectAll+ // Visible units that can rez
+
+bind           Ctrl+\  			HideInterface
+
+bind			\ 		moverotate
+bind			\ 		movetilt
+
+
